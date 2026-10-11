@@ -6,7 +6,7 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    # Mise à jour Steam 4 fois par jour (UTC)
+    # Actualisation 4 fois par jour (UTC)
     - cron: '17 4,10,16,22 * * *'
 
 permissions:
@@ -37,30 +37,28 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Vérifier les fichiers du projet
+      - name: Vérifier les fichiers
         run: |
-          echo "Dossier actuel :"
-          pwd
-          echo "Fichiers présents :"
+          echo "Fichiers du projet :"
           ls -la
 
-      - name: Récupérer les prix et visuels Steam (France)
+      - name: Récupérer les prix Steam
         run: python3 update_steam.py
 
-      - name: Enregistrer les nouveaux prix Steam
+      - name: Enregistrer les prix Steam
         run: |
           if ! git diff --quiet -- steam-data.json; then
             git config user.name "gamelab-bot"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add steam-data.json
-            git commit -m "Actualiser relevé Steam"
+            git commit -m "Actualiser les prix Steam"
             git push
           fi
 
       - name: Préparer GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Regrouper les fichiers publics
+      - name: Préparer les fichiers du site
         run: |
           mkdir -p _site
 
@@ -68,13 +66,12 @@ jobs:
           cp style.css _site/
           cp script.js _site/
           cp config.js _site/
-          cp supabase.js _site/
           cp catalogue.json _site/
           cp steam-data.json _site/
 
           touch _site/.nojekyll
 
-      - name: Charger le site statique
+      - name: Envoyer les fichiers à GitHub Pages
         uses: actions/upload-pages-artifact@v4
         with:
           path: _site
