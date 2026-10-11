@@ -6,7 +6,7 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    # Mise à jour 4 fois par jour (heures UTC)
+    # Mise à jour Steam 4 fois par jour (UTC)
     - cron: '17 4,10,16,22 * * *'
 
 permissions:
@@ -43,8 +43,6 @@ jobs:
           pwd
           echo "Fichiers présents :"
           ls -la
-          echo "Arborescence du projet :"
-          find . -maxdepth 2 -type f
 
       - name: Récupérer les prix et visuels Steam (France)
         run: python3 update_steam.py
@@ -65,7 +63,15 @@ jobs:
       - name: Regrouper les fichiers publics
         run: |
           mkdir -p _site
-          cp index.html style.css script.js catalogue.json steam-data.json _site/
+
+          cp index.html _site/
+          cp style.css _site/
+          cp script.js _site/
+          cp config.js _site/
+          cp supabase.js _site/
+          cp catalogue.json _site/
+          cp steam-data.json _site/
+
           touch _site/.nojekyll
 
       - name: Charger le site statique
@@ -76,4 +82,3 @@ jobs:
       - name: Publier GameLab
         id: deployment
         uses: actions/deploy-pages@v4
-
