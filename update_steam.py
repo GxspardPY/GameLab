@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Collecte périodiquement les fiches publiques du magasin Steam, région France.
 
-Exécution : python3 scripts/update_steam.py
+Exécution : python3 update_steam.py
 Aucune clé API nécessaire. Les limites et erreurs côté Steam sont possibles ;
 une indisponibilité n'est jamais remplacée par un prix approximatif.
 """

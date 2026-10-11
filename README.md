@@ -1,71 +1,69 @@
-# GameLab — votre collection de jeux à deux
+# GameLab — version collaborative
 
-Site web sombre et responsive (HTML / CSS / JavaScript), **hébergeable gratuitement sur GitHub Pages**.
+GameLab garde son interface, les jaquettes, les fiches au clic, le tri par prix et les tarifs Steam actualisés par GitHub Actions. **Nouveau :** vos deux comptes utilisent la **même liste partagée Supabase** (ajouts, favoris, statuts, suppression). Les changements arrivent presque immédiatement grâce aux notifications Supabase ; un contrôle toutes les 15 secondes prend le relais si nécessaire.
 
-## Le site sait faire quoi ?
+## 1 — Créer le projet Supabase (gratuit pour un petit groupe)
 
-- Pochettes officielles Steam pour les jeux dont on connaît l'App ID.
-- Fiche au clic : image, résumé, genre, joueurs, statut, lien Steam, prix et date du relevé.
-- Prix français en euros et promotions, via un **relevé périodique Steam effectué par GitHub Actions**.
-- Tri **prix croissant / décroissant**, par remise, ou alphabétique (jeux sans tarif à la fin).
-- Recherche, filtres, favoris, progression, budget des jeux non terminés et roulette.
-- Ajout et modification personnels, sauvegarde et transfert JSON.
-- Fonctionne aussi sur téléphone.
+1. Ouvre https://supabase.com/dashboard et crée un projet.
+2. Dans **SQL Editor → New query**, colle **tout `supabase.sql`**, puis clique sur **Run**. Ne saute pas cette étape : elle installe les tables, les permissions de sécurité (RLS) et les fonctions permettant de créer et rejoindre un groupe.
+3. Dans **Project Settings → API Keys** (ou *Connect* selon l'interface), récupère **Project URL** et **anon / publishable key**. Ne copie **JAMAIS** une clé `service_role` ou `secret` dans un site public.
+4. Ouvre `config.js` dans VS Code : remplace les deux valeurs `REMPLACER_...` par l'URL et **la clé publique**. Exemple :
 
-### 1) Tester dans VS Code
-
-1. Décompresse `GameLab.zip` et ouvre le dossier `GameLab` dans VS Code.
-2. Installe l'extension **Live Server** (ou lance `python -m http.server 5500` dans le dossier).
-3. Ouvre `index.html` via Live Server, généralement `http://127.0.0.1:5500`.
-
-> Évite d'ouvrir directement `file:///.../index.html` : le navigateur peut bloquer la lecture des fichiers JSON.
-
-### 2) Mettre en ligne (GitHub Pages)
-
-1. Crée un dépôt GitHub **public**, par exemple `gamelab`.
-2. Ajoute **tout le contenu du dossier GameLab à la racine** du dépôt : `index.html`, `style.css`, `script.js`, `catalogue.json`, `steam-data.json`, `.github/workflows/gamelab.yml`, `scripts/update_steam.py`.
-3. Utilise `main` comme branche principale.
-4. Dans **Settings → Pages → Build and deployment → Source**, sélectionne **GitHub Actions** (et non « Deploy from a branch »).
-5. Dans **Actions**, ouvre « Actualiser Steam et publier », puis **Run workflow**. Si GitHub demande d'activer Actions, accepte.
-6. La première exécution récupère les prix FR et publie la page. Ton adresse sera du type : `https://TON-PSEUDO.github.io/gamelab/`.
-
-Le workflow se relance normalement quatre fois par jour, **sans garantie d'exécution à l'heure exacte**. Les prix et les images sont issus de l'API publique de la boutique Steam ; ses réponses peuvent échouer ou ne pas renseigner certains jeux. Aucun prix n'est inventé. L'heure du dernier relevé est affichée sur le site. Ce ne sont **pas des prix temps réel**.
-
-Si GitHub refuse de pousser `steam-data.json` : regarde **Settings → Actions → General → Workflow permissions**. Si le workflow échoue, consulte son journal. Pour un dépôt avec des règles de branche strictes, autorise le bot à mettre à jour le fichier ou retire l'étape de commit et conserve simplement l'artefact publié.
-
-### 3) Ajouter un nouveau jeu pour vous deux
-
-`catalogue.json` contient la liste **commune et publique**. Ouvre ce fichier, puis ajoute un objet :
-
-```json
-{
-  "name": "Nouveau jeu",
-  "appid": 620,
-  "genre": "Énigmes / Coop",
-  "players": "2 joueurs",
-  "description": "Un petit résumé de votre jeu."
-}
+```js
+window.GAMELAB_SUPABASE = {
+  url: 'https://ton-projet.supabase.co',
+  anonKey: 'ta-cle-publique-anon-ou-sb_publishable'
+};
 ```
 
-Remplace `620` par l'identifiant du jeu choisi, visible dans son URL Steam (`store.steampowered.com/app/620/`). Enregistre et pousse le fichier vers GitHub : le workflow repart, puis vos deux navigateurs verront le même jeu.
+5. Dans **Authentication → Providers → Email**, laisse l'authentification e-mail activée. Si la confirmation par e-mail est active, chaque utilisateur devra cliquer sur le lien du mail avant de se connecter.
+6. Dans **Authentication → URL Configuration**, définis **Site URL** sur `https://gxspardpy.github.io/GameLab/` et ajoute cette même adresse aux **Redirect URLs** si nécessaire.
 
-Les entrées `Left Left Left` et `Scam With Your Friends` n'ont **pas d'App ID confirmé**, donc pas de prix ni de pochette attribués au hasard. Une fois leurs pages Steam retrouvées, renseigne l'App ID.
+> La clé `anon` est publique par conception ; la sécurité repose sur les règles RLS installées par `supabase.sql`. L'**invitation de groupe** doit en revanche rester entre vous deux. N'envoie jamais tes mots de passe ni des clés secrètes.
 
-### 4) Important : ce qui est partagé et ce qui ne l'est pas
+## 2 — Mettre à jour ton dépôt GitHub déjà créé
 
-- **Partagé :** le catalogue présent dans `catalogue.json`, les pochettes et les relevés de prix publiés sur GitHub.
-- **Personnel :** favoris, statuts, changements et jeux ajoutés par le bouton **Ajouter un jeu** sont stockés dans le `localStorage` de chaque navigateur. Ton pote ne voit **pas automatiquement** ces modifications.
-- **Pour partager une sélection sans modifier GitHub :** exporte le JSON, puis ton pote l'importe.
-- **Pour modifier ensemble la même liste en direct :** il faut ajouter un service de synchronisation et des règles d'accès, par exemple Supabase. GitHub Pages ne fournit pas de base de données.
+Dans VS Code :
 
-### Fichiers
+1. Dézippe le projet et ouvre ce dossier.
+2. Modifie `config.js` comme expliqué ci-dessus.
+3. Copie les fichiers de cette version à la **racine** de ton dépôt GitHub existant : `index.html`, `style.css`, `script.js`, `config.js`, `catalogue.json`, `steam-data.json`, `update_steam.py`, ainsi que `.github/workflows/gamelab.yml`.
+4. `supabase.sql` et `README.md` peuvent rester dans le dépôt ; ils ne sont pas envoyés au site par GitHub Pages.
+5. Fais un commit et pousse les changements sur `main` (ou via GitHub **Add file → Upload files** pour les fichiers de la racine, puis mets aussi à jour le workflow sous `.github/workflows/`).
+6. Dans **GitHub → Actions**, ouvre la nouvelle exécution **Actualiser Steam et publier** : vérifie qu'elle finit avec une coche verte.
 
-- `index.html` : structure et panneaux.
-- `style.css` : design responsive.
-- `script.js` : logique, fiches, filtres, stockage.
-- `catalogue.json` : liste commune de jeux et descriptions.
-- `steam-data.json` : dernier relevé de Steam (vide avant le premier workflow).
-- `scripts/update_steam.py` : relève prix, réductions, infos et jaquettes de Steam.
-- `.github/workflows/gamelab.yml` : actualise et publie le site.
+Tu peux aussi tester localement depuis VS Code avec l'extension **Live Server**. Ne lance pas `index.html` en `file://` car les fichiers JSON se chargent par `fetch()`.
 
-Aucune clé privée Steam / GitHub n'est stockée dans le site.
+## 3 — Utiliser la même liste avec ton pote
+
+1. Ouvre https://gxspardpy.github.io/GameLab/ et inscris-toi avec ton e-mail et ton mot de passe.
+2. Confirme ton e-mail si demandé, puis connecte-toi.
+3. Clique sur **Créer notre groupe**. GameLab importe les jeux de `catalogue.json` dans cette liste lors de la création.
+4. Clique sur **Copier le code** et partage-le **en privé** à ton pote.
+5. Ton pote ouvre la même URL, crée **son propre compte**, puis colle ton code dans **Rejoindre le groupe**.
+6. Lorsque l'un ajoute, modifie ou supprime un jeu, l'autre voit la même liste. Les favoris et statuts sont **communs au groupe**, et non individuels.
+
+## À savoir sur les prix
+
+Les tarifs sont des **relevés** Steam France, pas des valeurs en direct à chaque ouverture. Le workflow GitHub récupère les jeux présents dans `catalogue.json` quatre fois par jour si Steam répond. Un **nouveau jeu ajouté depuis le site** se synchronise tout de suite, avec une image si son App ID est connu, mais son prix Steam n'est pas relevé automatiquement tant que son App ID ne figure pas également dans `catalogue.json`. Tu peux provisoirement saisir un prix manuel dans sa fiche.
+
+## Dépannage
+
+- **Écran « Supabase n'est pas encore configuré »** : remplis puis publie `config.js` ; vérifie que ce fichier est bien copié par GitHub Actions.
+- **« relation ... does not exist » / « function ... does not exist »** : relance `supabase.sql` dans SQL Editor.
+- **« new row violates row-level security policy »** : les règles SQL n'ont pas été appliquées, ou tu n'as pas rejoint le groupe.
+- **Compte créé mais connexion impossible** : cherche le mail de confirmation dans tes mails/indésirables.
+- **Page en cache** : Ctrl + F5 ; ouvre la dernière version déployée.
+- **Prix indisponible** : vérifie `steam-data.json` et le workflow Steam GitHub. Les nouveaux jeux non présents dans `catalogue.json` ne sont pas récupérés automatiquement.
+
+## Architecture
+
+- `index.html` / `style.css` : interface.
+- `script.js` : interface, authentification Supabase, lecture/écriture de la liste partagée, abonnement aux changements et vérification périodique.
+- `config.js` : URL et clé **publique** Supabase.
+- `supabase.sql` : SQL des tables, sécurité RLS, fonctions créer/rejoindre et notifications.
+- `catalogue.json` : suggestions initiales et jeux surveillés par Steam.
+- `update_steam.py` + `.github/workflows/gamelab.yml` : collecte des prix et publication GitHub Pages.
+- `steam-data.json` : dernier relevé Steam.
+
+Le projet est statique et compatible avec GitHub Pages. Ne stocke pas de données privées sensibles dans les descriptions de jeux : le code d'invitation donne accès à leur liste à toute personne authentifiée qui possède ce code.

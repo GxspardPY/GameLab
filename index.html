@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
+  <script src="config.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -19,6 +21,33 @@
     <nav aria-label="Navigation principale"><a href="#collection" class="nav-link active">Collection</a><a href="#decision" class="nav-link">Décider</a></nav>
     <button class="btn btn-primary btn-sm" id="addTop"><span aria-hidden="true">＋</span> Ajouter un jeu</button>
   </header>
+  <section id="accountPane" class="account-layer" hidden>
+    <div class="account-box">
+      <div class="eyebrow">GAMELAB / MODE DUO</div>
+      <h2>Votre collection.<br><span>Ensemble.</span></h2>
+      <p id="accountCaption">Connecte-toi pour synchroniser les jeux avec ton pote.</p>
+      <div id="authStep">
+        <form id="authForm" class="auth-form">
+          <label>Adresse e-mail<input id="authEmail" type="email" required autocomplete="email" placeholder="vous@exemple.fr"></label>
+          <label>Mot de passe<input id="authPassword" type="password" required minlength="8" autocomplete="current-password" placeholder="8 caractères minimum"></label>
+          <p id="authError" role="status" class="auth-error"></p>
+          <div class="auth-actions"><button class="btn btn-primary" type="submit" name="authAction" value="login">Se connecter</button><button class="btn btn-outline" type="submit" name="authAction" value="signup">Créer un compte</button></div>
+        </form>
+      </div>
+      <div id="roomStep" hidden>
+        <div id="roomChoices" class="room-choices"></div>
+        <div class="room-pair"><label>Nom du nouveau groupe<input id="newRoomName" maxlength="70" placeholder="Notre duo" value="Notre GameLab"></label><button id="createRoom" class="btn btn-primary">Créer notre groupe</button></div>
+        <div class="room-pair"><label>Code reçu de ton pote<input id="joinCode" type="text" maxlength="32" placeholder="Colle le code d'invitation"></label><button id="joinRoom" class="btn btn-outline">Rejoindre le groupe</button></div>
+      </div>
+      <p class="account-note">Les jeux sont privés : seuls les membres du groupe y ont accès. Ne partagez pas le code d’invitation publiquement.</p>
+    </div>
+  </section>
+  <div id="sharedBar" class="shared-bar container" hidden>
+    <span class="live-dot"></span><strong id="sharedName">Notre GameLab</strong>
+    <label>Code pour inviter ton pote <input id="inviteValue" readonly aria-label="Code d'invitation"></label>
+    <button id="copyInvite" class="btn btn-outline btn-sm">Copier le code</button>
+    <button id="signout" class="btn btn-quiet btn-sm">Se déconnecter</button>
+  </div>
   <main>
     <section class="hero container">
       <div class="hero-content">
@@ -55,12 +84,12 @@
       <div id="empty" class="empty" hidden><strong>Aucun jeu trouvé.</strong><p>Modifiez les filtres ou ajoutez un nouveau jeu.</p></div>
     </section>
     <section class="decision container" id="decision"><div class="decision-card"><div><div class="eyebrow">02 / LET THE GAME DECIDE</div><h2>On joue à quoi <em>ce soir ?</em></h2><p>Impossible de vous mettre d'accord ? La roulette choisit au hasard parmi les jeux non terminés.</p><button id="spin" class="btn btn-primary">✦ Lancer la roulette</button><div id="result" class="wheel-result" role="status"></div></div><div class="roulette-graphic" aria-hidden="true"><div class="roulette-ring"><span>?</span></div><div class="roulette-small">RANDOM PICK</div></div></div></section>
-    <section class="manage container"><div><div class="eyebrow">03 / VOS DONNÉES</div><h2>Votre liste, vos choix.</h2><p>Sauvegardez ou envoyez vos favoris à votre pote. Les modifications personnelles restent sur votre navigateur.</p></div><div class="manage-actions"><button id="export" class="btn btn-outline">↓ Exporter</button><button id="import" class="btn btn-outline">↑ Importer</button><input type="file" id="file" accept="application/json,.json" hidden></div></section>
+    <section class="manage container"><div><div class="eyebrow">03 / VOS DONNÉES</div><h2>Votre liste, vos choix.</h2><p>Vos jeux, favoris et statuts sont partagés entre les membres de votre groupe. Vous pouvez exporter une copie de la liste.</p></div><div class="manage-actions"><button id="export" class="btn btn-outline">↓ Exporter</button><button id="import" class="btn btn-outline">↑ Importer</button><input type="file" id="file" accept="application/json,.json" hidden></div></section>
   </main>
   <footer><div class="container footer-inner"><a class="wordmark footer-mark" href="#top"><span class="mark">G<span>.</span></span><span>GAME<span class="accent">LAB</span></span></a><span>Built for the next game night.</span><span>Les prix sont ceux du dernier relevé Steam, pas un flux temps réel.</span></div></footer>
   <dialog id="details" class="details-modal"><div id="detailsContent"></div></dialog>
-  <dialog id="editModal" class="edit-modal"><form id="gameForm"><div class="modal-heading"><div><div class="eyebrow">GAMELAB / WISHLIST</div><h2 id="editTitle">Ajouter un jeu</h2></div><button type="button" class="icon-button" data-close="editModal" aria-label="Fermer">✕</button></div><p class="field-tip">Un lien Steam permet d'afficher automatiquement sa pochette. Pour des prix actualisés, le jeu doit aussi figurer dans <code>catalogue.json</code>.</p><label>Nom du jeu<input id="name" required maxlength="90" placeholder="Ex. PEAK"></label><label>Lien Steam ou Steam App ID<input id="steam" placeholder="https://store.steampowered.com/app/3527290/PEAK"></label><label>Petit résumé<textarea id="description" rows="3" maxlength="700" placeholder="De quoi parle le jeu ?"></textarea></label><div class="field-row"><label>Prix manuel (€), si nécessaire<input id="price" type="number" min="0" step="0.01" placeholder="Facultatif"></label><label>Statut<select id="status"><option value="todo">À faire</option><option value="playing">En cours</option><option value="done">Terminé</option></select></label></div><div class="form-actions"><button type="button" class="btn btn-quiet" data-close="editModal">Annuler</button><button type="submit" class="btn btn-primary">Enregistrer →</button></div></form></dialog>
-  <dialog id="infoModal" class="info-modal"><div class="modal-heading"><h2>À propos des prix Steam</h2><button data-close="infoModal" class="icon-button" aria-label="Fermer">✕</button></div><p>GameLab utilise une tâche GitHub Actions pour consulter périodiquement les prix français, les promotions, les images et les descriptions des jeux présents dans <code>catalogue.json</code>.</p><p>Les montants affichés viennent du <strong>dernier relevé réussi</strong> — ils ne sont pas mis à jour à chaque clic. Quand un prix manque ou devient trop ancien, il est indiqué comme indisponible ou ancien, jamais estimé.</p><p>Un jeu que vous ajoutez seulement dans votre navigateur ne sera pas automatiquement visible par votre pote ni synchronisé côté Steam. Pour l'inclure dans le catalogue partagé, ajoutez son App ID dans <code>catalogue.json</code> sur GitHub.</p><button data-close="infoModal" class="btn btn-primary">Compris</button></dialog>
+  <dialog id="editModal" class="edit-modal"><form id="gameForm"><div class="modal-heading"><div><div class="eyebrow">GAMELAB / WISHLIST</div><h2 id="editTitle">Ajouter un jeu</h2></div><button type="button" class="icon-button" data-close="editModal" aria-label="Fermer">✕</button></div><p class="field-tip">Un lien Steam permet d’afficher automatiquement sa pochette. Les nouveaux jeux partagés peuvent utiliser un prix manuel tant qu’ils ne figurent pas dans le relevé Steam automatisé.</p><label>Nom du jeu<input id="name" required maxlength="90" placeholder="Ex. PEAK"></label><label>Lien Steam ou Steam App ID<input id="steam" placeholder="https://store.steampowered.com/app/3527290/PEAK"></label><label>Petit résumé<textarea id="description" rows="3" maxlength="700" placeholder="De quoi parle le jeu ?"></textarea></label><div class="field-row"><label>Prix manuel (€), si nécessaire<input id="price" type="number" min="0" step="0.01" placeholder="Facultatif"></label><label>Statut<select id="status"><option value="todo">À faire</option><option value="playing">En cours</option><option value="done">Terminé</option></select></label></div><div class="form-actions"><button type="button" class="btn btn-quiet" data-close="editModal">Annuler</button><button type="submit" class="btn btn-primary">Enregistrer →</button></div></form></dialog>
+  <dialog id="infoModal" class="info-modal"><div class="modal-heading"><h2>À propos des prix Steam</h2><button data-close="infoModal" class="icon-button" aria-label="Fermer">✕</button></div><p>GameLab utilise une tâche GitHub Actions pour consulter périodiquement les prix français, les promotions, les images et les descriptions des jeux présents dans <code>catalogue.json</code>.</p><p>Les montants affichés viennent du <strong>dernier relevé réussi</strong> — ils ne sont pas mis à jour à chaque clic. Quand un prix manque ou devient trop ancien, il est indiqué comme indisponible ou ancien, jamais estimé.</p><p>Les jeux ajoutés à un groupe Supabase sont immédiatement partagés avec ses membres. Pour actualiser automatiquement le prix d’un nouveau jeu, ajoutez également son App ID à <code>catalogue.json</code> sur GitHub.</p><button data-close="infoModal" class="btn btn-primary">Compris</button></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
