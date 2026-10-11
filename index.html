@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0b11">
+  <meta name="description" content="GameLab : votre laboratoire de jeux coop. Comparez les prix Steam, découvrez les jeux et choisissez votre prochaine aventure.">
+  <title>GameLab · Your next game starts here</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"></div>
+  <header class="site-header" id="top">
+    <a class="wordmark" href="#top" aria-label="GameLab, accueil"><span class="mark">G<span>.</span></span><span>GAME<span class="accent">LAB</span></span></a>
+    <nav aria-label="Navigation principale"><a href="#collection" class="nav-link active">Collection</a><a href="#decision" class="nav-link">Décider</a></nav>
+    <button class="btn btn-primary btn-sm" id="addTop"><span aria-hidden="true">＋</span> Ajouter un jeu</button>
+  </header>
+  <main>
+    <section class="hero container">
+      <div class="hero-content">
+        <div class="overline"><span class="live-dot"></span> LE LABORATOIRE DE VOS PROCHAINES PARTIES</div>
+        <h1>Moins chercher.<br><span>Plus jouer.</span></h1>
+        <p>Un seul endroit pour garder tous vos jeux à tester, suivre leurs prix Steam et trouver votre prochaine pépite en duo.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#collection">Explorer les jeux <span>↗</span></a><button id="spinHero" class="btn btn-quiet">Surprends-moi <span>↝</span></button></div>
+        <div class="hero-note"><span class="note-icon">✦</span> Votre prochaine aventure commence ici.</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-glow"></div>
+        <div class="art-card art-card-one"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3527290/header.jpg" alt=""></div>
+        <div class="art-card art-card-two"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2001120/header.jpg" alt=""></div>
+        <div class="art-card art-card-three"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3241660/header.jpg" alt=""></div>
+        <div class="floating-tag">✦ THE NEXT ONE</div>
+      </div>
+    </section>
+    <section class="metrics container" aria-label="Statistiques de votre liste">
+      <div class="metric"><div class="metric-title">JEUX AU TOTAL</div><div class="metric-main"><strong id="total">—</strong><span>◈</span></div></div>
+      <div class="metric"><div class="metric-title">À DÉCOUVRIR</div><div class="metric-main"><strong id="todo">—</strong><span>↗</span></div></div>
+      <div class="metric"><div class="metric-title">COUPS DE CŒUR</div><div class="metric-main"><strong id="favs">—</strong><span>♡</span></div></div>
+      <div class="metric"><div class="metric-title">BUDGET DES JEUX À FAIRE</div><div class="metric-main"><strong id="budget">—</strong><span>€</span></div></div>
+    </section>
+    <section id="collection" class="collection container">
+      <div class="section-top"><div><div class="eyebrow">01 / VOTRE COLLECTION</div><h2>Le game <span>catalogue.</span></h2><p>Des idées aux pépites. Cliquez sur une pochette pour voir tous les détails.</p></div><button id="addLibrary" class="btn btn-outline"><span>＋</span> Ajouter un jeu</button></div>
+      <div class="price-feed" id="feed" role="status"><span class="feed-light"></span><span id="feedText">Chargement des informations Steam…</span><button id="helpPrices" class="feed-help">Comment ça marche ?</button></div>
+      <div class="filters">
+        <label class="search"><span aria-hidden="true">⌕</span><input id="search" aria-label="Rechercher un jeu" placeholder="Rechercher un jeu, un genre…"></label>
+        <div class="select-holder"><label for="filter">Afficher</label><select id="filter"><option value="all">Tous les jeux</option><option value="todo">À faire</option><option value="playing">En cours</option><option value="done">Terminés</option><option value="fav">Favoris</option><option value="deals">En promotion</option></select></div>
+        <div class="select-holder"><label for="sort">Trier par</label><select id="sort"><option value="featured">Par défaut</option><option value="cheap">Prix : moins cher</option><option value="expensive">Prix : plus cher</option><option value="discount">Meilleure réduction</option><option value="name">Nom A → Z</option></select></div>
+      </div>
+      <div class="catalogue-meta"><span id="shownCount">— jeux</span><span class="sort-note">Prix indisponibles affichés à la fin du tri</span></div>
+      <div id="grid" class="game-grid" aria-live="polite"></div>
+      <div id="empty" class="empty" hidden><strong>Aucun jeu trouvé.</strong><p>Modifiez les filtres ou ajoutez un nouveau jeu.</p></div>
+    </section>
+    <section class="decision container" id="decision"><div class="decision-card"><div><div class="eyebrow">02 / LET THE GAME DECIDE</div><h2>On joue à quoi <em>ce soir ?</em></h2><p>Impossible de vous mettre d'accord ? La roulette choisit au hasard parmi les jeux non terminés.</p><button id="spin" class="btn btn-primary">✦ Lancer la roulette</button><div id="result" class="wheel-result" role="status"></div></div><div class="roulette-graphic" aria-hidden="true"><div class="roulette-ring"><span>?</span></div><div class="roulette-small">RANDOM PICK</div></div></div></section>
+    <section class="manage container"><div><div class="eyebrow">03 / VOS DONNÉES</div><h2>Votre liste, vos choix.</h2><p>Sauvegardez ou envoyez vos favoris à votre pote. Les modifications personnelles restent sur votre navigateur.</p></div><div class="manage-actions"><button id="export" class="btn btn-outline">↓ Exporter</button><button id="import" class="btn btn-outline">↑ Importer</button><input type="file" id="file" accept="application/json,.json" hidden></div></section>
+  </main>
+  <footer><div class="container footer-inner"><a class="wordmark footer-mark" href="#top"><span class="mark">G<span>.</span></span><span>GAME<span class="accent">LAB</span></span></a><span>Built for the next game night.</span><span>Les prix sont ceux du dernier relevé Steam, pas un flux temps réel.</span></div></footer>
+  <dialog id="details" class="details-modal"><div id="detailsContent"></div></dialog>
+  <dialog id="editModal" class="edit-modal"><form id="gameForm"><div class="modal-heading"><div><div class="eyebrow">GAMELAB / WISHLIST</div><h2 id="editTitle">Ajouter un jeu</h2></div><button type="button" class="icon-button" data-close="editModal" aria-label="Fermer">✕</button></div><p class="field-tip">Un lien Steam permet d'afficher automatiquement sa pochette. Pour des prix actualisés, le jeu doit aussi figurer dans <code>catalogue.json</code>.</p><label>Nom du jeu<input id="name" required maxlength="90" placeholder="Ex. PEAK"></label><label>Lien Steam ou Steam App ID<input id="steam" placeholder="https://store.steampowered.com/app/3527290/PEAK"></label><label>Petit résumé<textarea id="description" rows="3" maxlength="700" placeholder="De quoi parle le jeu ?"></textarea></label><div class="field-row"><label>Prix manuel (€), si nécessaire<input id="price" type="number" min="0" step="0.01" placeholder="Facultatif"></label><label>Statut<select id="status"><option value="todo">À faire</option><option value="playing">En cours</option><option value="done">Terminé</option></select></label></div><div class="form-actions"><button type="button" class="btn btn-quiet" data-close="editModal">Annuler</button><button type="submit" class="btn btn-primary">Enregistrer →</button></div></form></dialog>
+  <dialog id="infoModal" class="info-modal"><div class="modal-heading"><h2>À propos des prix Steam</h2><button data-close="infoModal" class="icon-button" aria-label="Fermer">✕</button></div><p>GameLab utilise une tâche GitHub Actions pour consulter périodiquement les prix français, les promotions, les images et les descriptions des jeux présents dans <code>catalogue.json</code>.</p><p>Les montants affichés viennent du <strong>dernier relevé réussi</strong> — ils ne sont pas mis à jour à chaque clic. Quand un prix manque ou devient trop ancien, il est indiqué comme indisponible ou ancien, jamais estimé.</p><p>Un jeu que vous ajoutez seulement dans votre navigateur ne sera pas automatiquement visible par votre pote ni synchronisé côté Steam. Pour l'inclure dans le catalogue partagé, ajoutez son App ID dans <code>catalogue.json</code> sur GitHub.</p><button data-close="infoModal" class="btn btn-primary">Compris</button></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

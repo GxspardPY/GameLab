@@ -1,0 +1,21 @@
+[
+  {"name":"Escape the Backrooms","appid":1943950,"genre":"Horreur / Énigmes","players":"1–4 joueurs","description":"Explorez des niveaux inquiétants avec votre équipe, résolvez des énigmes et tentez d'échapper aux entités des Backrooms."},
+  {"name":"PEAK","appid":3527290,"genre":"Escalade / Coop","players":"1–4 joueurs","description":"Grimpez une montagne imprévisible après un accident d'avion. Chaque ascension demande de l'entraide et un peu de sang-froid."},
+  {"name":"Sons of the Forest","appid":1326470,"genre":"Survie / Horreur","players":"Coop en ligne","description":"Survivez sur une île sauvage, construisez votre campement et explorez un monde plein de mystères avec vos amis."},
+  {"name":"Left Left Left","appid":null,"genre":"À identifier","players":"À vérifier","description":"Jeu à identifier : ajoutez son lien Steam exact dans le catalogue pour récupérer sa fiche officielle."},
+  {"name":"Scam With Your Friends","appid":null,"genre":"À identifier","players":"À vérifier","description":"Jeu à identifier : ajoutez son lien Steam exact dans le catalogue pour récupérer sa fiche officielle."},
+  {"name":"Shift at Midnight","appid":3722330,"genre":"Horreur / Enquête","players":"1–3 joueurs","description":"Travaillez de nuit dans une station-service. Examinez les clients suspects et coopérez pour survivre aux visites étranges."},
+  {"name":"Thick as Thieves","appid":3341000,"genre":"Infiltration / Coop","players":"Solo ou coop","description":"Menez des cambriolages discrets dans une ville mystérieuse en utilisant vos outils, votre observation et votre sens du timing."},
+  {"name":"Split Fiction","appid":2001120,"genre":"Aventure / Coop","players":"2 joueurs","description":"Traversez des mondes de fantasy et de science-fiction dans une aventure conçue de bout en bout pour deux joueurs."},
+  {"name":"RV There Yet?","appid":3949040,"genre":"Conduite / Coop","players":"Multijoueur","description":"Ramenez votre camping-car à la maison en traversant des routes improbables et en coordonnant les manœuvres."},
+  {"name":"Subnautica 2","appid":1962700,"genre":"Survie / Exploration","players":"Solo ou coop","description":"Plongez sur une planète océanique inconnue, découvrez ses créatures et construisez des bases sous-marines."},
+  {"name":"Valheim","appid":892970,"genre":"Survie / Construction","players":"1–10 joueurs","description":"Explorez un monde inspiré de la mythologie viking, construisez une base et affrontez des créatures légendaires."},
+  {"name":"R.E.P.O.","appid":3241660,"genre":"Horreur / Coop","players":"1–6 joueurs","description":"Récupérez des objets précieux dans des lieux hantés sans faire de bruit. La physique rend chaque mission chaotique."},
+  {"name":"We Were Here Together","appid":865360,"genre":"Énigmes / Coop","players":"2 joueurs","description":"Communiquez à distance pour résoudre des puzzles et vous sortir de situations complexes dans un décor polaire."},
+  {"name":"Chained Together","appid":2567870,"genre":"Parkour / Coop","players":"1–4 joueurs","description":"Grimpez à plusieurs en étant attachés par une chaîne. Le moindre mauvais saut peut entraîner toute l'équipe."},
+  {"name":"Content Warning","appid":2881650,"genre":"Horreur / Humour","players":"Coop en ligne","description":"Filmez des créatures effrayantes avec vos amis pour produire des vidéos sensationnelles sans perdre votre caméra."},
+  {"name":"A Way Out","appid":1222700,"genre":"Aventure / Histoire","players":"2 joueurs","description":"Vivez une évasion en coopération à deux dans une aventure narrative où chacun joue un personnage différent."},
+  {"name":"Lethal Company","appid":1966720,"genre":"Horreur / Récupération","players":"Coop en ligne","description":"Explorez des lunes désertes pour récupérer des objets de valeur et remplissez les quotas de votre entreprise."},
+  {"name":"Portal 2","appid":620,"genre":"Énigmes / Coop","players":"2 joueurs","description":"Résolvez des casse-têtes ingénieux à deux en combinant vos portails dans des salles de test."},
+  {"name":"It Takes Two","appid":1426210,"genre":"Aventure / Coop","players":"2 joueurs","description":"Une aventure à deux riche en idées, dans laquelle les mécaniques de jeu se renouvellent à chaque niveau."}
+]
