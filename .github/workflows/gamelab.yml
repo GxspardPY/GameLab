@@ -33,7 +33,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Récupérer les prix et visuels de Steam (France)
-        run: python3 scripts/update_steam.py
+        run: python3 update_steam.py
       - name: Garder le dernier relevé dans le dépôt
         run: |
           if ! git diff --quiet -- steam-data.json; then
