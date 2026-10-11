@@ -6,7 +6,7 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    # Mise à jour 4 fois par jour
+    # Mise à jour 4 fois par jour (heures UTC)
     - cron: '17 4,10,16,22 * * *'
 
 permissions:
@@ -36,6 +36,15 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
+      - name: Vérifier les fichiers du projet
+        run: |
+          echo "Dossier actuel :"
+          pwd
+          echo "Fichiers présents :"
+          ls -la
+          echo "Arborescence du projet :"
+          find . -maxdepth 2 -type f
 
       - name: Récupérer les prix et visuels Steam (France)
         run: python3 update_steam.py
