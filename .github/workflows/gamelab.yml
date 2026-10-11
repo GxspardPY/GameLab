@@ -1,3 +1,4 @@
+
 name: Actualiser Steam et publier
 
 on:
@@ -5,7 +6,7 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    # 4 relevés/jour ; GitHub peut différer ou omettre certains lancements planifiés.
+    # Mise à jour 4 fois par jour
     - cron: '17 4,10,16,22 * * *'
 
 permissions:
@@ -20,21 +21,26 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Récupérer le dépôt
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+
       - name: Installer Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Récupérer les prix et visuels de Steam (France)
+
+      - name: Récupérer les prix et visuels Steam (France)
         run: python3 update_steam.py
-      - name: Garder le dernier relevé dans le dépôt
+
+      - name: Enregistrer les nouveaux prix Steam
         run: |
           if ! git diff --quiet -- steam-data.json; then
             git config user.name "gamelab-bot"
@@ -43,17 +49,22 @@ jobs:
             git commit -m "Actualiser relevé Steam"
             git push
           fi
+
       - name: Préparer GitHub Pages
         uses: actions/configure-pages@v5
+
       - name: Regrouper les fichiers publics
         run: |
           mkdir -p _site
           cp index.html style.css script.js catalogue.json steam-data.json _site/
           touch _site/.nojekyll
+
       - name: Charger le site statique
         uses: actions/upload-pages-artifact@v4
         with:
           path: _site
-      - name: Publier
+
+      - name: Publier GameLab
         id: deployment
         uses: actions/deploy-pages@v4
+
