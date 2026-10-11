@@ -15,7 +15,7 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent
 CATALOGUE = ROOT / "catalogue.json"
 DESTINATION = ROOT / "steam-data.json"
 AGENT = "GameLab/1.0 (public game wishlist price snapshot)"
