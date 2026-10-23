@@ -1,11 +1,11 @@
 {
   "source": "Steam Store /api/appdetails?cc=fr",
   "region": "FR",
-  "updatedAt": "2026-10-23T15:02:15+00:00",
+  "updatedAt": "2026-10-23T19:56:34+00:00",
   "games": {
     "1943950": {
       "appid": 1943950,
-      "checkedAt": "2026-10-23T15:02:15+00:00",
+      "checkedAt": "2026-10-23T19:56:34+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.49,
@@ -19,7 +19,7 @@
     },
     "3527290": {
       "appid": 3527290,
-      "checkedAt": "2026-10-23T15:02:15+00:00",
+      "checkedAt": "2026-10-23T19:56:34+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 7.49,
@@ -33,7 +33,7 @@
     },
     "1326470": {
       "appid": 1326470,
-      "checkedAt": "2026-10-23T15:02:15+00:00",
+      "checkedAt": "2026-10-23T19:56:34+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 28.99,
@@ -47,7 +47,7 @@
     },
     "3722330": {
       "appid": 3722330,
-      "checkedAt": "2026-10-23T15:02:15+00:00",
+      "checkedAt": "2026-10-23T19:56:34+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.99,
@@ -61,7 +61,7 @@
     },
     "3341000": {
       "appid": 3341000,
-      "checkedAt": "2026-10-23T15:02:15+00:00",
+      "checkedAt": "2026-10-23T19:56:34+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 4.99,
@@ -75,7 +75,7 @@
     },
     "2001120": {
       "appid": 2001120,
-      "checkedAt": "2026-10-23T15:02:15+00:00",
+      "checkedAt": "2026-10-23T19:56:34+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 49.99,
@@ -89,7 +89,7 @@
     },
     "3949040": {
       "appid": 3949040,
-      "checkedAt": "2026-10-23T15:02:15+00:00",
+      "checkedAt": "2026-10-23T19:56:34+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 7.79,
@@ -103,7 +103,7 @@
     },
     "1962700": {
       "appid": 1962700,
-      "checkedAt": "2026-10-23T15:02:15+00:00",
+      "checkedAt": "2026-10-23T19:56:34+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 29.99,
@@ -117,7 +117,7 @@
     },
     "892970": {
       "appid": 892970,
-      "checkedAt": "2026-10-23T15:02:15+00:00",
+      "checkedAt": "2026-10-23T19:56:34+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 29.99,
@@ -131,7 +131,7 @@
     },
     "3241660": {
       "appid": 3241660,
-      "checkedAt": "2026-10-23T15:02:15+00:00",
+      "checkedAt": "2026-10-23T19:56:34+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.49,
@@ -145,7 +145,7 @@
     },
     "865360": {
       "appid": 865360,
-      "checkedAt": "2026-10-23T15:02:15+00:00",
+      "checkedAt": "2026-10-23T19:56:34+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 12.99,
@@ -159,7 +159,7 @@
     },
     "2567870": {
       "appid": 2567870,
-      "checkedAt": "2026-10-23T15:02:15+00:00",
+      "checkedAt": "2026-10-23T19:56:34+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 4.99,
@@ -173,7 +173,7 @@
     },
     "2881650": {
       "appid": 2881650,
-      "checkedAt": "2026-10-23T15:02:15+00:00",
+      "checkedAt": "2026-10-23T19:56:34+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 7.49,
@@ -187,7 +187,7 @@
     },
     "1222700": {
       "appid": 1222700,
-      "checkedAt": "2026-10-23T15:02:15+00:00",
+      "checkedAt": "2026-10-23T19:56:34+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 29.99,
@@ -201,7 +201,7 @@
     },
     "1966720": {
       "appid": 1966720,
-      "checkedAt": "2026-10-23T15:02:15+00:00",
+      "checkedAt": "2026-10-23T19:56:34+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.75,
@@ -215,7 +215,7 @@
     },
     "620": {
       "appid": 620,
-      "checkedAt": "2026-10-23T15:02:15+00:00",
+      "checkedAt": "2026-10-23T19:56:34+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.69,
@@ -229,7 +229,7 @@
     },
     "1426210": {
       "appid": 1426210,
-      "checkedAt": "2026-10-23T15:02:15+00:00",
+      "checkedAt": "2026-10-23T19:56:34+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 39.99,
