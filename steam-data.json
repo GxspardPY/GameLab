@@ -1,11 +1,11 @@
 {
   "source": "Steam Store /api/appdetails?cc=fr",
   "region": "FR",
-  "updatedAt": "2026-10-27T09:47:17+00:00",
+  "updatedAt": "2026-10-27T15:52:21+00:00",
   "games": {
     "1943950": {
       "appid": 1943950,
-      "checkedAt": "2026-10-27T09:47:17+00:00",
+      "checkedAt": "2026-10-27T15:52:21+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.49,
@@ -19,7 +19,7 @@
     },
     "3527290": {
       "appid": 3527290,
-      "checkedAt": "2026-10-27T09:47:17+00:00",
+      "checkedAt": "2026-10-27T15:52:21+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 7.49,
@@ -33,7 +33,7 @@
     },
     "1326470": {
       "appid": 1326470,
-      "checkedAt": "2026-10-27T09:47:17+00:00",
+      "checkedAt": "2026-10-27T15:52:21+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 28.99,
@@ -47,7 +47,7 @@
     },
     "3722330": {
       "appid": 3722330,
-      "checkedAt": "2026-10-27T09:47:17+00:00",
+      "checkedAt": "2026-10-27T15:52:21+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.99,
@@ -55,13 +55,13 @@
       "discountPercent": 10,
       "name": "Shift At Midnight",
       "shortDescription": "Jeu d'horreur coopératif en ligne pouvant réunir jusqu'à 3 joueurs. Travaillez en équipe au cours de nuits générées aléatoirement pour enquêter sur vos clients, dont certains ne sont pas réellement humains. Une erreur, et il vous faudra vous barricader, poser des pièges et vous cacher.",
-      "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3722330/759ecea2ffe1ad3819aefdda79e265b8b332bf8f/header.jpg?t=1793033238",
+      "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3722330/759ecea2ffe1ad3819aefdda79e265b8b332bf8f/header.jpg?t=1793103951",
       "developer": "Bun Muen",
       "releaseDate": "22 juil. 2026"
     },
     "3341000": {
       "appid": 3341000,
-      "checkedAt": "2026-10-27T09:47:17+00:00",
+      "checkedAt": "2026-10-27T15:52:21+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 4.99,
@@ -75,7 +75,7 @@
     },
     "2001120": {
       "appid": 2001120,
-      "checkedAt": "2026-10-27T09:47:17+00:00",
+      "checkedAt": "2026-10-27T15:52:21+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 49.99,
@@ -89,7 +89,7 @@
     },
     "3949040": {
       "appid": 3949040,
-      "checkedAt": "2026-10-27T09:47:17+00:00",
+      "checkedAt": "2026-10-27T15:52:21+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 7.79,
@@ -103,7 +103,7 @@
     },
     "1962700": {
       "appid": 1962700,
-      "checkedAt": "2026-10-27T09:47:17+00:00",
+      "checkedAt": "2026-10-27T15:52:21+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 29.99,
@@ -117,7 +117,7 @@
     },
     "892970": {
       "appid": 892970,
-      "checkedAt": "2026-10-27T09:47:17+00:00",
+      "checkedAt": "2026-10-27T15:52:21+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 29.99,
@@ -131,7 +131,7 @@
     },
     "3241660": {
       "appid": 3241660,
-      "checkedAt": "2026-10-27T09:47:17+00:00",
+      "checkedAt": "2026-10-27T15:52:21+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.49,
@@ -145,7 +145,7 @@
     },
     "865360": {
       "appid": 865360,
-      "checkedAt": "2026-10-27T09:47:17+00:00",
+      "checkedAt": "2026-10-27T15:52:21+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 12.99,
@@ -159,7 +159,7 @@
     },
     "2567870": {
       "appid": 2567870,
-      "checkedAt": "2026-10-27T09:47:17+00:00",
+      "checkedAt": "2026-10-27T15:52:21+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 4.99,
@@ -167,13 +167,13 @@
       "discountPercent": 0,
       "name": "Chained Together",
       "shortDescription": "Depuis les profondeurs de l'enfer, grimpez enchaîné à vos amis à travers plusieurs mondes. Seul ou en coopération, essayez d'atteindre le sommet et découvrez ce qui vous y attend...",
-      "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2567870/9989d3793429ffa481cc3228bb66d65565b9ce2b/header.jpg?t=1791478907",
+      "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2567870/ff16ff5057fa8e0a3a2cb9f4665a59a255c831cb/header_alt_assets_1.jpg?t=1793107565",
       "developer": "Anegar Games, Lab42",
       "releaseDate": "19 juin 2024"
     },
     "2881650": {
       "appid": 2881650,
-      "checkedAt": "2026-10-27T09:47:17+00:00",
+      "checkedAt": "2026-10-27T15:52:21+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 7.49,
@@ -187,7 +187,7 @@
     },
     "1222700": {
       "appid": 1222700,
-      "checkedAt": "2026-10-27T09:47:17+00:00",
+      "checkedAt": "2026-10-27T15:52:21+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 29.99,
@@ -201,7 +201,7 @@
     },
     "1966720": {
       "appid": 1966720,
-      "checkedAt": "2026-10-27T09:47:17+00:00",
+      "checkedAt": "2026-10-27T15:52:21+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.75,
@@ -215,7 +215,7 @@
     },
     "620": {
       "appid": 620,
-      "checkedAt": "2026-10-27T09:47:17+00:00",
+      "checkedAt": "2026-10-27T15:52:21+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.69,
@@ -229,7 +229,7 @@
     },
     "1426210": {
       "appid": 1426210,
-      "checkedAt": "2026-10-27T09:47:17+00:00",
+      "checkedAt": "2026-10-27T15:52:21+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 39.99,
