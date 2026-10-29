@@ -1,11 +1,11 @@
 {
   "source": "Steam Store /api/appdetails?cc=fr",
   "region": "FR",
-  "updatedAt": "2026-10-29T10:52:05+00:00",
+  "updatedAt": "2026-10-29T21:06:26+00:00",
   "games": {
     "1943950": {
       "appid": 1943950,
-      "checkedAt": "2026-10-29T10:52:05+00:00",
+      "checkedAt": "2026-10-29T21:06:26+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.49,
@@ -13,13 +13,13 @@
       "discountPercent": 20,
       "name": "Escape the Backrooms",
       "shortDescription": "Escape the Backrooms est un jeu d'exploration et d'horreur jouable de 1 à 4 en coop. Traversez plus de 30 étages inquiétants tout en évitant les entités et autres dangers. Essayez de vous enfuir, mais sachez ceci : votre survie n'est pas garantie.",
-      "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1943950/f3dac53a5d3e68a4bb67786872b4693260049b26/header.jpg?t=1792608971",
+      "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1943950/8feac86b42210aea2b466a130238dde80992b4f9/header_alt_assets_4.jpg?t=1793277465",
       "developer": "Fancy Games, Blackbird Interactive",
       "releaseDate": "23 oct. 2025"
     },
     "3527290": {
       "appid": 3527290,
-      "checkedAt": "2026-10-29T10:52:05+00:00",
+      "checkedAt": "2026-10-29T21:06:26+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 7.49,
@@ -33,7 +33,7 @@
     },
     "1326470": {
       "appid": 1326470,
-      "checkedAt": "2026-10-29T10:52:05+00:00",
+      "checkedAt": "2026-10-29T21:06:26+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 28.99,
@@ -47,7 +47,7 @@
     },
     "3722330": {
       "appid": 3722330,
-      "checkedAt": "2026-10-29T10:52:05+00:00",
+      "checkedAt": "2026-10-29T21:06:26+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.99,
@@ -61,7 +61,7 @@
     },
     "3341000": {
       "appid": 3341000,
-      "checkedAt": "2026-10-29T10:52:05+00:00",
+      "checkedAt": "2026-10-29T21:06:26+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 4.99,
@@ -75,7 +75,7 @@
     },
     "2001120": {
       "appid": 2001120,
-      "checkedAt": "2026-10-29T10:52:05+00:00",
+      "checkedAt": "2026-10-29T21:06:26+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 49.99,
@@ -89,12 +89,12 @@
     },
     "3949040": {
       "appid": 3949040,
-      "checkedAt": "2026-10-29T10:52:05+00:00",
+      "checkedAt": "2026-10-29T21:06:26+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 7.79,
-      "final": 7.79,
-      "discountPercent": 0,
+      "final": 4.67,
+      "discountPercent": 40,
       "name": "RV There Yet?",
       "shortDescription": "Un jeu d'aventure coopératif qui vous met au défi de conduire votre caravane jusqu'à votre domicile !",
       "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3949040/cae24b4ed7f4531be51f0d63f785b7d253f92dc3/header.jpg?t=1789134289",
@@ -103,7 +103,7 @@
     },
     "1962700": {
       "appid": 1962700,
-      "checkedAt": "2026-10-29T10:52:05+00:00",
+      "checkedAt": "2026-10-29T21:06:26+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 29.99,
@@ -117,7 +117,7 @@
     },
     "892970": {
       "appid": 892970,
-      "checkedAt": "2026-10-29T10:52:05+00:00",
+      "checkedAt": "2026-10-29T21:06:26+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 29.99,
@@ -131,7 +131,7 @@
     },
     "3241660": {
       "appid": 3241660,
-      "checkedAt": "2026-10-29T10:52:05+00:00",
+      "checkedAt": "2026-10-29T21:06:26+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.49,
@@ -139,13 +139,13 @@
       "discountPercent": 35,
       "name": "R.E.P.O.",
       "shortDescription": "An online co-op horror game with up to 6 players. Locate valuable, fully physics-based objects and handle them with care as you retrieve and extract to satisfy your creator's desires.",
-      "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3241660/1ea445e044a2d5b09cfa8291350b63ebed6e5741/header.jpg?t=1791817973",
+      "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3241660/62177765c05399116f0453fe1177b00ceed698c4/header_alt_assets_3.jpg?t=1793278962",
       "developer": "semiwork",
       "releaseDate": "26 févr. 2025"
     },
     "865360": {
       "appid": 865360,
-      "checkedAt": "2026-10-29T10:52:05+00:00",
+      "checkedAt": "2026-10-29T21:06:26+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 12.99,
@@ -159,7 +159,7 @@
     },
     "2567870": {
       "appid": 2567870,
-      "checkedAt": "2026-10-29T10:52:05+00:00",
+      "checkedAt": "2026-10-29T21:06:26+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 4.99,
@@ -173,7 +173,7 @@
     },
     "2881650": {
       "appid": 2881650,
-      "checkedAt": "2026-10-29T10:52:05+00:00",
+      "checkedAt": "2026-10-29T21:06:26+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 7.49,
@@ -187,7 +187,7 @@
     },
     "1222700": {
       "appid": 1222700,
-      "checkedAt": "2026-10-29T10:52:05+00:00",
+      "checkedAt": "2026-10-29T21:06:26+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 29.99,
@@ -201,7 +201,7 @@
     },
     "1966720": {
       "appid": 1966720,
-      "checkedAt": "2026-10-29T10:52:05+00:00",
+      "checkedAt": "2026-10-29T21:06:26+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.75,
@@ -215,7 +215,7 @@
     },
     "620": {
       "appid": 620,
-      "checkedAt": "2026-10-29T10:52:05+00:00",
+      "checkedAt": "2026-10-29T21:06:26+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.69,
@@ -229,7 +229,7 @@
     },
     "1426210": {
       "appid": 1426210,
-      "checkedAt": "2026-10-29T10:52:05+00:00",
+      "checkedAt": "2026-10-29T21:06:26+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 39.99,
