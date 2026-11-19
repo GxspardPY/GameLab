@@ -1,11 +1,11 @@
 {
   "source": "Steam Store /api/appdetails?cc=fr",
   "region": "FR",
-  "updatedAt": "2026-11-19T12:58:24+00:00",
+  "updatedAt": "2026-11-19T23:01:53+00:00",
   "games": {
     "1943950": {
       "appid": 1943950,
-      "checkedAt": "2026-11-19T12:58:24+00:00",
+      "checkedAt": "2026-11-19T23:01:53+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.49,
@@ -19,7 +19,7 @@
     },
     "3527290": {
       "appid": 3527290,
-      "checkedAt": "2026-11-19T12:58:24+00:00",
+      "checkedAt": "2026-11-19T23:01:53+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 7.49,
@@ -33,7 +33,7 @@
     },
     "1326470": {
       "appid": 1326470,
-      "checkedAt": "2026-11-19T12:58:24+00:00",
+      "checkedAt": "2026-11-19T23:01:53+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 28.99,
@@ -47,7 +47,7 @@
     },
     "3722330": {
       "appid": 3722330,
-      "checkedAt": "2026-11-19T12:58:24+00:00",
+      "checkedAt": "2026-11-19T23:01:53+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.99,
@@ -61,7 +61,7 @@
     },
     "3341000": {
       "appid": 3341000,
-      "checkedAt": "2026-11-19T12:58:24+00:00",
+      "checkedAt": "2026-11-19T23:01:53+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 4.99,
@@ -75,7 +75,7 @@
     },
     "2001120": {
       "appid": 2001120,
-      "checkedAt": "2026-11-19T12:58:24+00:00",
+      "checkedAt": "2026-11-19T23:01:53+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 49.99,
@@ -89,7 +89,7 @@
     },
     "3949040": {
       "appid": 3949040,
-      "checkedAt": "2026-11-19T12:58:24+00:00",
+      "checkedAt": "2026-11-19T23:01:53+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 7.79,
@@ -103,7 +103,7 @@
     },
     "1962700": {
       "appid": 1962700,
-      "checkedAt": "2026-11-19T12:58:24+00:00",
+      "checkedAt": "2026-11-19T23:01:53+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 29.99,
@@ -117,7 +117,7 @@
     },
     "892970": {
       "appid": 892970,
-      "checkedAt": "2026-11-19T12:58:24+00:00",
+      "checkedAt": "2026-11-19T23:01:53+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 29.99,
@@ -131,7 +131,7 @@
     },
     "3241660": {
       "appid": 3241660,
-      "checkedAt": "2026-11-19T12:58:24+00:00",
+      "checkedAt": "2026-11-19T23:01:53+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.49,
@@ -145,7 +145,7 @@
     },
     "865360": {
       "appid": 865360,
-      "checkedAt": "2026-11-19T12:58:24+00:00",
+      "checkedAt": "2026-11-19T23:01:53+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 12.99,
@@ -159,7 +159,7 @@
     },
     "2567870": {
       "appid": 2567870,
-      "checkedAt": "2026-11-19T12:58:24+00:00",
+      "checkedAt": "2026-11-19T23:01:53+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 4.99,
@@ -173,7 +173,7 @@
     },
     "2881650": {
       "appid": 2881650,
-      "checkedAt": "2026-11-19T12:58:24+00:00",
+      "checkedAt": "2026-11-19T23:01:53+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 7.49,
@@ -187,12 +187,12 @@
     },
     "1222700": {
       "appid": 1222700,
-      "checkedAt": "2026-11-19T12:58:24+00:00",
+      "checkedAt": "2026-11-19T23:01:53+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 29.99,
-      "final": 29.99,
-      "discountPercent": 0,
+      "final": 5.99,
+      "discountPercent": 80,
       "name": "A Way Out",
       "shortDescription": "A Way Out est une aventure exclusivement en co-op, dans laquelle vous incarnez deux détenus s'échappant de prison.",
       "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222700/header.jpg?t=1777323433",
@@ -201,7 +201,7 @@
     },
     "1966720": {
       "appid": 1966720,
-      "checkedAt": "2026-11-19T12:58:24+00:00",
+      "checkedAt": "2026-11-19T23:01:53+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.75,
@@ -215,7 +215,7 @@
     },
     "620": {
       "appid": 620,
-      "checkedAt": "2026-11-19T12:58:24+00:00",
+      "checkedAt": "2026-11-19T23:01:53+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 9.69,
@@ -229,12 +229,12 @@
     },
     "1426210": {
       "appid": 1426210,
-      "checkedAt": "2026-11-19T12:58:24+00:00",
+      "checkedAt": "2026-11-19T23:01:53+00:00",
       "available": true,
       "currency": "EUR",
       "initial": 39.99,
-      "final": 39.99,
-      "discountPercent": 0,
+      "final": 7.99,
+      "discountPercent": 80,
       "name": "It Takes Two",
       "shortDescription": "Embarquez pour un périple incroyable dans It Takes Two. Grâce au Pass ami*, invitez gratuitement un(e) ami(e) à relever avec vous une myriade de défis délicieusement déstabilisants.",
       "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1426210/header_french.jpg?t=1777395376",
